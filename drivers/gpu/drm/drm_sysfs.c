@@ -877,7 +877,14 @@ static ssize_t native_display_srgb_color_mode_store(struct device *dev,
 	if (ret) {
 		pr_err("set native_display_srgb  mode(%d) fail\n", native_display_srgb_color_mode);
 	}
-	return count;
+        return count;
+
+int oneplus_panel_status = 0;
+static ssize_t op_display_get_power_status(struct device *dev,
+				struct device_attribute *attr, char *buf)
+{
+	return sprintf(buf, "%d\n", oneplus_panel_status);
+}
 }
 /******************************************************************/
 static DEVICE_ATTR_RW(status);
