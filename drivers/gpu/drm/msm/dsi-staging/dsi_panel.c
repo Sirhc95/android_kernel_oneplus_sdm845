@@ -4076,6 +4076,8 @@ int dsi_panel_set_lp1(struct dsi_panel *panel)
 	if (rc)
 		pr_err("[%s] failed to send DSI_CMD_SET_LP1 cmd, rc=%d\n",
 		       panel->name, rc);
+	pr_info("dsi_panel_set_lp1 aod_mode %d aod_status %d", panel->aod_mode,
+                       panel->aod_status);
 	oneplus_panel_status = 3; // DISPLAY_POWER_DOZE
 	mutex_unlock(&panel->panel_lock);
 	return rc;

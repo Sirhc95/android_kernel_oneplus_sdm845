@@ -878,6 +878,7 @@ static ssize_t native_display_srgb_color_mode_store(struct device *dev,
 		pr_err("set native_display_srgb  mode(%d) fail\n", native_display_srgb_color_mode);
 	}
         return count;
+}
 
 int oneplus_panel_status = 0;
 static ssize_t op_display_get_power_status(struct device *dev,
@@ -894,7 +895,7 @@ static ssize_t op_display_set_power_status(struct device *dev,
 
 	return count;
 }
-}
+
 /******************************************************************/
 static DEVICE_ATTR_RW(status);
 static DEVICE_ATTR_RO(enabled);
